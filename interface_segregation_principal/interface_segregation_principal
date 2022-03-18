@@ -1,0 +1,102 @@
+<?php
+/* client should never be forced to implement an interface that is not use or clients shouldn't br forced to depend on methods they do not use*/
+
+
+/* متعملش انترفيس فيها كل الفانكشن علشان الكلاس متبقاش مجبرة انها تعمل امبليمنتيشن ليها*/
+
+
+
+interface playerinterface{
+
+    public function attack();
+    public function defense();
+    public function keeping();
+
+}
+
+class attack implements playerinterface{
+    public function attack(){
+
+        echo "attack";
+
+    }
+    public function defense(){
+        echo "defense";
+
+
+    }
+    public function keeping(){
+        echo "keeping";
+
+    
+    }
+}
+
+
+/* this is not acheive the goal of principal */
+
+
+
+/* نقسم ال interfacce الي كدا واجد*/
+
+interface  attack_interface{
+    public function attack();
+
+}
+interface  defense_interface{
+    public function defense();
+
+}
+interface  keeping_interface{
+    public function keeping();
+
+}
+
+
+class attack2 implements attack_interface{
+    public function attack(){
+
+        echo "attack";
+
+    }
+
+}
+class defense2 implements defense_interface{
+    public function defense(){
+        echo "defense";
+
+    }
+
+}
+class keeping2 implements keeping_interface{
+    public function keeping(){
+        echo "keeping";
+
+    }
+
+}
+
+
+$att=new attack2();
+$att->attack();
+$def =new defense2();
+$def->defense();
+$keep=new keeping2();
+$keep->keeping();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
