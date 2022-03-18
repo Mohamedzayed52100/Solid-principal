@@ -1,0 +1,136 @@
+<?php
+
+function say(Array $aarr) {
+
+
+    foreach($aarr as $a){
+        echo $a;
+    }
+}
+
+$arr= Array(1,2,3,4,5,6,7,8,9);
+say($arr);
+
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+
+
+
+/* object or entities should be open for extention but closed for modification */
+/* اي كود نقدر نعملة تغير ف السلوك ف الكلاس منغيرش ف الكود  */
+
+
+
+class player{
+
+    public function paly(){
+
+        echo "paly function in player class <br>";
+
+
+    }
+}
+
+class _match_{
+
+    private $playerList;
+    public function __construct(Array $players){
+        $this->playerList=$players;
+    }
+
+
+
+    public function start (){
+        echo"start  play  <br>";
+
+
+        foreach($this->playerList as $player){
+            $player->paly();
+
+        
+        }
+    }
+}
+
+     $palyers=array();
+for($index = 1; $index <=11;$index++){
+array_push($palyers,new player());
+}
+$match1 =new _match_($palyers);
+$match1->start();
+
+
+/* code for acheive this problems */
+
+
+
+
+
+interface player_interface{
+
+    public function paly();
+
+
+
+}
+
+
+
+
+
+
+class attack_palyers implements  player_interface{
+
+
+    public function paly(){
+
+
+        echo "attack_palyers";
+
+    }
+
+}
+class defense_palyers implements  player_interface{
+
+
+    public function paly(){
+
+
+        echo "defense_palyers";
+
+    }
+
+}
+
+
+
+$palyerss=array();
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+for($index = 1; $index <=5;$index++){
+    array_push($palyerss,new attack_palyers());
+    }
+    for($index = 1; $index <=5;$index++){
+        array_push($palyerss,new defense_palyers());
+        }
+
+
+        $match2 =new _match_($palyerss);
+
+
+        $match2->start();
+
+?>
