@@ -1,0 +1,80 @@
+<?php
+   
+/*  entites must depend on abstraction not on concretions it states that the high level module must depend on low level module  but should depend on abstraction*/ 
+
+interface playerInterface_{
+    public function paly();
+
+}
+
+interface  attack_interface{
+    public function attack();
+
+}
+interface  defense_interface{
+    public function defense();
+
+}
+interface  keeping_interface{
+    public function keeping();
+
+}
+
+
+class attackplayer_ implements playerInterface_ , attack_interface {
+
+    public function paly(){
+        echo " palying attackplayer_<br>";
+        $this->attack();
+
+    }
+
+    public function attack(){
+        echo " attacking<br>";
+
+    }
+
+}
+
+class defenseplayer_ implements playerInterface_ , defense_interface {
+
+    public function paly(){
+        echo " defense  defenseplayer_<br>";
+        $this->defense();
+
+    }
+
+    public function defense(){
+        echo " defenseing<br>"; 
+
+    }
+
+}
+class keepingplayer_ implements playerInterface_ , keeping_interface {
+
+    public function paly(){
+        echo " playing keepingplayer_<br>";
+        $this->keeping();
+
+
+    }
+
+    public function keeping(){
+        echo " keeping<br>";
+        
+    }
+
+}
+ $keep=new keepingplayer_();
+ $keep->paly();
+
+
+ $def =new defenseplayer_();
+ $def->paly();
+
+
+ $attack=new attackplayer_();
+ $attack->paly();
+
+
+?>
