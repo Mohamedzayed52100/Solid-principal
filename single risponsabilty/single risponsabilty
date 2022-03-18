@@ -1,2 +1,74 @@
 this is soild principal for 
 /* this code don't match with single responsabilty principal  */
+
+
+
+<?php
+/*
+class shoud have one and only one to change meaning that class shoud have one job
+*/
+
+class Match_ {
+    public function attack(){
+
+
+        echo "attack  function ";
+
+
+    }   
+    
+    public function defense(){
+        echo "defense  function ";
+
+
+    }
+    public  function keeper(){
+        echo "keeper  function ";
+
+
+    }
+
+}
+/* this code don't match with single responsabilty principal  */
+
+class attack{
+
+    public function __construct(){
+        echo "attack class <br>";
+    }
+
+
+}
+
+class defense{
+    public function __construct(){
+        echo "defense class <br>";
+    }
+
+}
+ class keeper{
+    public function __construct(){
+        echo "keeper class <br> ";
+    }
+
+ }
+
+
+ class _match_{
+     public function __construct(){
+         $attack1 =new attack();
+         $defense1 =new defense();
+         $keeper1=new keeper();
+         
+
+     }
+
+
+
+
+ }
+
+
+
+ $match =new _match_();
+
