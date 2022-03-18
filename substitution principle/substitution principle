@@ -1,0 +1,71 @@
+<?php
+
+/*
+let A class be a parent classs B in the child class from A the let  c use B if we change B with A in c class the implementation in c should not change
+*/
+
+
+interface player_interface{
+
+    public function paly();
+
+
+
+}
+
+
+
+
+
+ class Elhadry_father{
+
+    public  function keeping(){
+        return "good keeping";
+    }
+
+}
+
+ class Elhadry_son extends Elhadry_father{
+
+
+
+    public  function keeping(){
+        return " son good keeping";
+     }
+
+
+}
+
+class keeping_palyer implements player_interface{
+
+
+
+    public function paly(){
+        $keeper= new Elhadry_son();
+
+        // $keeper= new Elhadry_father();
+     echo  $keeper->keeping();
+
+    }
+}
+
+
+
+$keep1=new keeping_palyer();
+
+$keep1->paly();
+
+
+
+
+/*this is code which achiev the principal */
+
+
+
+$keeper= new Elhadry_son();
+
+// $keeper= new Elhadry_father();
+
+
+
+/* this is modify  */
